@@ -34,6 +34,11 @@ func formatForCsv(events []*Event) [][]string {
 		rows[i][0] = strconv.FormatInt(event.Ts, 10)
 		desc := EventDescriptions[event.Type]
 		rows[i][idPos[event.G]] = desc.Name
+		switch event.Type {
+		case EvGoCreate:
+			object_id := event.Args[0]
+			rows[i][idPos[object_id]] = "Created"
+		}
 	}
 
 	table := append([][]string{headers}, rows...)
