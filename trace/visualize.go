@@ -38,6 +38,9 @@ func formatForCsv(events []*Event) [][]string {
 		case EvGoCreate:
 			object_id := event.Args[0]
 			rows[i][idPos[object_id]] = "Created"
+		case EvGoUnblock:
+			object_id := event.Args[0]
+			rows[i][idPos[object_id]] = "Unblocked"
 		}
 	}
 
