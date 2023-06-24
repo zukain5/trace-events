@@ -1,6 +1,10 @@
 # trace-events
 Trace-events parses event information from trace.out (output by runtime/trace) and outputs it to csv.
 
+## Who is it for?
+- Beginning Go users unfamiliar with goroutine
+- People who have too much information in `go tool trace`
+
 ## Usage
 1. Run your Go program and get trace.out (see [official documentation](https://pkg.go.dev/runtime/trace#example-package) for how to output trace.out).
 2. Copy trace.out to the trace-events directory.
